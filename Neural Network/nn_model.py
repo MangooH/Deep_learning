@@ -370,6 +370,7 @@ class Net:
                 scale = np.sqrt(2.0 / all_size_list[idx - 1])
 
             # Sigmoid 활성화 함수를 사용할 경우 Xavier 초기화 방법 사용
+            # 표준편차가 sqrt(1/n)인 정규분포
             elif str(weight_init_std).lower() in ("sigmoid", "xavier"):
                 scale = np.sqrt(1.0 / all_size_list[idx - 1])
 
