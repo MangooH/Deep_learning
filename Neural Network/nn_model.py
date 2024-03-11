@@ -67,7 +67,9 @@ class FCLayer:
         return out
 
     def backward(self, dout):
-        """완전 연결 레이어의 역전파(backpropagation)"""
+        """역전파(backpropagation)
+        Gradient for Input, Weight, bias
+        """
         dx = np.dot(dout, self.W.T)
         self.dW = np.dot(self.x.T, dout)
         self.db = np.sum(dout, axis=0)
